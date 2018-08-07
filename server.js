@@ -51,6 +51,13 @@ app.get("/about", (req, res) => {
   }); // render använder det som finns i views
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: "Projects Page",
+    projectsMsg: "these are our cool projects.."
+  });
+});
+
 app.get("/bad", (req, res) => {
   res.send({
     error: "bad error detected",
