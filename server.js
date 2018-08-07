@@ -2,6 +2,8 @@ const express = require("express");
 const hbs = require("hbs"); //handlebarsjs.com, template program, views innehåller templates
 const fs = require("fs");
 
+const port = process.env.PORT || 3000; //funkar både med heroku satt port eller lokal
+
 var app = express();
 
 app.set("view engine", "hbs");
@@ -60,6 +62,6 @@ app.get("/bad", (req, res) => {
   })
 });
 
-app.listen(3000, () => {
-  console.log("serving to port 3000, localhost:3000");
+app.listen(port, () => {
+  console.log(`serving to port ${port}, localhost:${port}`);
 });
